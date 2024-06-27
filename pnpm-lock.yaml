@@ -10,13 +10,13 @@ importers:
     dependencies:
       '@langchain/community':
         specifier: ^0.2.14
-        version: 0.2.14(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))
+        version: 0.2.14(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))(pdf-parse@1.1.1)
       '@langchain/core':
         specifier: ^0.2.10
-        version: 0.2.10(langchain@0.2.7(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(openai@4.51.0(encoding@0.1.13))
+        version: 0.2.10(langchain@0.2.7(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))(pdf-parse@1.1.1))(openai@4.51.0(encoding@0.1.13))
       '@langchain/openai':
         specifier: ^0.2.0
-        version: 0.2.0(encoding@0.1.13)(langchain@0.2.7(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))
+        version: 0.2.0(encoding@0.1.13)(langchain@0.2.7(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))(pdf-parse@1.1.1))
       '@pinecone-database/pinecone':
         specifier: ^2.2.2
         version: 2.2.2
@@ -34,10 +34,13 @@ importers:
         version: 16.4.5
       langchain:
         specifier: ^0.2.7
-        version: 0.2.7(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))
+        version: 0.2.7(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))(pdf-parse@1.1.1)
       openai:
         specifier: ^4.51.0
         version: 4.51.0(encoding@0.1.13)
+      pdf-parse:
+        specifier: ^1.1.1
+        version: 1.1.1
     devDependencies:
       '@types/node':
         specifier: ^20.14.5
@@ -695,6 +698,14 @@ packages:
     resolution: {integrity: sha512-HTUrgRJ7r4dsZKU6GjmpfRK1O76h97Z8MfS1G0FozR+oF2kG6Vfe8JE6zwrkbxigziPHinCJ+gCPjA9EaBDtRw==}
     engines: {node: '>= 6'}
 
+  debug@3.2.7:
+    resolution: {integrity: sha512-CFjzYYAi4ThfiQvizrFQevTTXHtnCqWfe7x1AhgEscTz6ZbLbfoLRLPugTQyBth6f8ZERVUSyWHFD/7Wu4t1XQ==}
+    peerDependencies:
+      supports-color: '*'
+    peerDependenciesMeta:
+      supports-color:
+        optional: true
+
   debug@4.3.5:
     resolution: {integrity: sha512-pt0bNEmneDIvdL1Xsd9oDQ/wrQRkXDT4AUWlNZNPKvW5x/jyO9VFXkJUP07vQ2upmw5PlaITaPKc31jK13V+jg==}
     engines: {node: '>=6.0'}
@@ -1282,6 +1293,9 @@ packages:
     resolution: {integrity: sha512-/jKZoMpw0F8GRwl4/eLROPA3cfcXtLApP0QzLmUT/HuPCZWyB7IY9ZrMeKw2O/nFIqPQB3PVM9aYm0F312AXDQ==}
     engines: {node: '>=10.5.0'}
 
+  node-ensure@0.0.0:
+    resolution: {integrity: sha512-DRI60hzo2oKN1ma0ckc6nQWlHU69RH6xN0sjQTjMpChPfTYvKZdcQFfdYK2RWbJcKyUizSIy/l8OTGxMAM1QDw==}
+
   node-fetch@2.7.0:
     resolution: {integrity: sha512-c4FRfUm/dbcWZ7U+1Wq0AwCyFL+3nt2bEw05wfxSz+DWpWsitgmSgYmy2dQdWyKC1694ELPqMs/YzUSNozLt8A==}
     engines: {node: 4.x || >=6.0.0}
@@ -1351,6 +1365,10 @@ packages:
 
   parse5@7.1.2:
     resolution: {integrity: sha512-Czj1WaSVpaoj0wbhMzLmWD69anp2WH7FXMB9n1Sy8/ZFF9jolSQVMu1Ij5WIyGmcBmhk7EOndpO4mIpihVqAXw==}
+
+  pdf-parse@1.1.1:
+    resolution: {integrity: sha512-v6ZJ/efsBpGrGGknjtq9J/oC8tZWq0KWL5vQrk2GlzLEQPUDB1ex+13Rmidl1neNN358Jn9EHZw5y07FFtaC7A==}
+    engines: {node: '>=6.8.1'}
 
   picomatch@2.3.1:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
@@ -1577,16 +1595,16 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.4.15
 
-  '@langchain/community@0.2.14(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))':
+  '@langchain/community@0.2.14(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))(pdf-parse@1.1.1)':
     dependencies:
-      '@langchain/core': 0.2.10(langchain@0.2.3(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(openai@4.51.0(encoding@0.1.13))
-      '@langchain/openai': 0.1.3(encoding@0.1.13)(langchain@0.2.3(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))
+      '@langchain/core': 0.2.10(langchain@0.2.3(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))(pdf-parse@1.1.1))(openai@4.51.0(encoding@0.1.13))
+      '@langchain/openai': 0.1.3(encoding@0.1.13)(langchain@0.2.3(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))(pdf-parse@1.1.1))
       binary-extensions: 2.3.0
       expr-eval: 2.0.2
       flat: 5.0.2
       js-yaml: 4.1.0
-      langchain: 0.2.3(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))
-      langsmith: 0.1.32(@langchain/core@0.2.10(langchain@0.2.3(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(openai@4.51.0(encoding@0.1.13)))(langchain@0.2.3(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(openai@4.51.0(encoding@0.1.13))
+      langchain: 0.2.3(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))(pdf-parse@1.1.1)
+      langsmith: 0.1.32(@langchain/core@0.2.10(langchain@0.2.3(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))(pdf-parse@1.1.1))(openai@4.51.0(encoding@0.1.13)))(langchain@0.2.3(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))(pdf-parse@1.1.1))(openai@4.51.0(encoding@0.1.13))
       uuid: 9.0.1
       zod: 3.23.8
       zod-to-json-schema: 3.23.1(zod@3.23.8)
@@ -1594,6 +1612,7 @@ snapshots:
       '@pinecone-database/pinecone': 2.2.2
       cheerio: 1.0.0-rc.12
       chromadb: 1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))
+      pdf-parse: 1.1.1
     transitivePeerDependencies:
       - '@gomomento/sdk-web'
       - axios
@@ -1604,13 +1623,13 @@ snapshots:
       - peggy
       - pyodide
 
-  '@langchain/core@0.2.10(langchain@0.2.3(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(openai@4.51.0(encoding@0.1.13))':
+  '@langchain/core@0.2.10(langchain@0.2.3(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))(pdf-parse@1.1.1))(openai@4.51.0(encoding@0.1.13))':
     dependencies:
       ansi-styles: 5.2.0
       camelcase: 6.3.0
       decamelize: 1.2.0
       js-tiktoken: 1.0.12
-      langsmith: 0.1.32(@langchain/core@0.2.10(langchain@0.2.3(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(openai@4.51.0(encoding@0.1.13)))(langchain@0.2.3(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(openai@4.51.0(encoding@0.1.13))
+      langsmith: 0.1.32(@langchain/core@0.2.10(langchain@0.2.3(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))(pdf-parse@1.1.1))(openai@4.51.0(encoding@0.1.13)))(langchain@0.2.3(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))(pdf-parse@1.1.1))(openai@4.51.0(encoding@0.1.13))
       ml-distance: 4.0.1
       mustache: 4.2.0
       p-queue: 6.6.2
@@ -1622,13 +1641,13 @@ snapshots:
       - langchain
       - openai
 
-  '@langchain/core@0.2.10(langchain@0.2.7(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(openai@4.51.0(encoding@0.1.13))':
+  '@langchain/core@0.2.10(langchain@0.2.7(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))(pdf-parse@1.1.1))(openai@4.51.0(encoding@0.1.13))':
     dependencies:
       ansi-styles: 5.2.0
       camelcase: 6.3.0
       decamelize: 1.2.0
       js-tiktoken: 1.0.12
-      langsmith: 0.1.32(@langchain/core@0.2.10(langchain@0.2.7(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(openai@4.51.0(encoding@0.1.13)))(langchain@0.2.7(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(openai@4.51.0(encoding@0.1.13))
+      langsmith: 0.1.32(@langchain/core@0.2.10(langchain@0.2.7(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))(pdf-parse@1.1.1))(openai@4.51.0(encoding@0.1.13)))(langchain@0.2.7(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))(pdf-parse@1.1.1))(openai@4.51.0(encoding@0.1.13))
       ml-distance: 4.0.1
       mustache: 4.2.0
       p-queue: 6.6.2
@@ -1640,9 +1659,9 @@ snapshots:
       - langchain
       - openai
 
-  '@langchain/openai@0.0.34(encoding@0.1.13)(langchain@0.2.3(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))':
+  '@langchain/openai@0.0.34(encoding@0.1.13)(langchain@0.2.3(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))(pdf-parse@1.1.1))':
     dependencies:
-      '@langchain/core': 0.2.10(langchain@0.2.3(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(openai@4.51.0(encoding@0.1.13))
+      '@langchain/core': 0.2.10(langchain@0.2.3(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))(pdf-parse@1.1.1))(openai@4.51.0(encoding@0.1.13))
       js-tiktoken: 1.0.12
       openai: 4.51.0(encoding@0.1.13)
       zod: 3.23.8
@@ -1651,9 +1670,9 @@ snapshots:
       - encoding
       - langchain
 
-  '@langchain/openai@0.1.3(encoding@0.1.13)(langchain@0.2.3(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))':
+  '@langchain/openai@0.1.3(encoding@0.1.13)(langchain@0.2.3(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))(pdf-parse@1.1.1))':
     dependencies:
-      '@langchain/core': 0.2.10(langchain@0.2.3(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(openai@4.51.0(encoding@0.1.13))
+      '@langchain/core': 0.2.10(langchain@0.2.3(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))(pdf-parse@1.1.1))(openai@4.51.0(encoding@0.1.13))
       js-tiktoken: 1.0.12
       openai: 4.51.0(encoding@0.1.13)
       zod: 3.23.8
@@ -1662,9 +1681,9 @@ snapshots:
       - encoding
       - langchain
 
-  '@langchain/openai@0.2.0(encoding@0.1.13)(langchain@0.2.7(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))':
+  '@langchain/openai@0.2.0(encoding@0.1.13)(langchain@0.2.7(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))(pdf-parse@1.1.1))':
     dependencies:
-      '@langchain/core': 0.2.10(langchain@0.2.7(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(openai@4.51.0(encoding@0.1.13))
+      '@langchain/core': 0.2.10(langchain@0.2.7(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))(pdf-parse@1.1.1))(openai@4.51.0(encoding@0.1.13))
       js-tiktoken: 1.0.12
       openai: 4.51.0(encoding@0.1.13)
       zod: 3.23.8
@@ -1673,17 +1692,17 @@ snapshots:
       - encoding
       - langchain
 
-  '@langchain/textsplitters@0.0.3(langchain@0.2.3(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(openai@4.51.0(encoding@0.1.13))':
+  '@langchain/textsplitters@0.0.3(langchain@0.2.3(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))(pdf-parse@1.1.1))(openai@4.51.0(encoding@0.1.13))':
     dependencies:
-      '@langchain/core': 0.2.10(langchain@0.2.3(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(openai@4.51.0(encoding@0.1.13))
+      '@langchain/core': 0.2.10(langchain@0.2.3(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))(pdf-parse@1.1.1))(openai@4.51.0(encoding@0.1.13))
       js-tiktoken: 1.0.12
     transitivePeerDependencies:
       - langchain
       - openai
 
-  '@langchain/textsplitters@0.0.3(langchain@0.2.7(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(openai@4.51.0(encoding@0.1.13))':
+  '@langchain/textsplitters@0.0.3(langchain@0.2.7(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))(pdf-parse@1.1.1))(openai@4.51.0(encoding@0.1.13))':
     dependencies:
-      '@langchain/core': 0.2.10(langchain@0.2.7(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(openai@4.51.0(encoding@0.1.13))
+      '@langchain/core': 0.2.10(langchain@0.2.7(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))(pdf-parse@1.1.1))(openai@4.51.0(encoding@0.1.13))
       js-tiktoken: 1.0.12
     transitivePeerDependencies:
       - langchain
@@ -1943,6 +1962,10 @@ snapshots:
 
   css-what@6.1.0: {}
 
+  debug@3.2.7:
+    dependencies:
+      ms: 2.1.3
+
   debug@4.3.5(supports-color@5.5.0):
     dependencies:
       ms: 2.1.2
@@ -2103,17 +2126,17 @@ snapshots:
 
   jsonpointer@5.0.1: {}
 
-  langchain@0.2.3(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)):
+  langchain@0.2.3(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))(pdf-parse@1.1.1):
     dependencies:
-      '@langchain/core': 0.2.10(langchain@0.2.3(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(openai@4.51.0(encoding@0.1.13))
-      '@langchain/openai': 0.0.34(encoding@0.1.13)(langchain@0.2.3(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))
-      '@langchain/textsplitters': 0.0.3(langchain@0.2.3(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(openai@4.51.0(encoding@0.1.13))
+      '@langchain/core': 0.2.10(langchain@0.2.3(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))(pdf-parse@1.1.1))(openai@4.51.0(encoding@0.1.13))
+      '@langchain/openai': 0.0.34(encoding@0.1.13)(langchain@0.2.3(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))(pdf-parse@1.1.1))
+      '@langchain/textsplitters': 0.0.3(langchain@0.2.3(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))(pdf-parse@1.1.1))(openai@4.51.0(encoding@0.1.13))
       binary-extensions: 2.3.0
       js-tiktoken: 1.0.12
       js-yaml: 4.1.0
       jsonpointer: 5.0.1
       langchainhub: 0.0.11
-      langsmith: 0.1.32(@langchain/core@0.2.10(langchain@0.2.3(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(openai@4.51.0(encoding@0.1.13)))(langchain@0.2.3(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(openai@4.51.0(encoding@0.1.13))
+      langsmith: 0.1.32(@langchain/core@0.2.10(langchain@0.2.3(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))(pdf-parse@1.1.1))(openai@4.51.0(encoding@0.1.13)))(langchain@0.2.3(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))(pdf-parse@1.1.1))(openai@4.51.0(encoding@0.1.13))
       ml-distance: 4.0.1
       openapi-types: 12.1.3
       p-retry: 4.6.2
@@ -2125,21 +2148,22 @@ snapshots:
       '@pinecone-database/pinecone': 2.2.2
       cheerio: 1.0.0-rc.12
       chromadb: 1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))
+      pdf-parse: 1.1.1
     transitivePeerDependencies:
       - encoding
       - openai
 
-  langchain@0.2.7(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)):
+  langchain@0.2.7(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))(pdf-parse@1.1.1):
     dependencies:
-      '@langchain/core': 0.2.10(langchain@0.2.7(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(openai@4.51.0(encoding@0.1.13))
-      '@langchain/openai': 0.2.0(encoding@0.1.13)(langchain@0.2.7(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))
-      '@langchain/textsplitters': 0.0.3(langchain@0.2.7(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(openai@4.51.0(encoding@0.1.13))
+      '@langchain/core': 0.2.10(langchain@0.2.7(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))(pdf-parse@1.1.1))(openai@4.51.0(encoding@0.1.13))
+      '@langchain/openai': 0.2.0(encoding@0.1.13)(langchain@0.2.7(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))(pdf-parse@1.1.1))
+      '@langchain/textsplitters': 0.0.3(langchain@0.2.7(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))(pdf-parse@1.1.1))(openai@4.51.0(encoding@0.1.13))
       binary-extensions: 2.3.0
       js-tiktoken: 1.0.12
       js-yaml: 4.1.0
       jsonpointer: 5.0.1
       langchainhub: 0.0.11
-      langsmith: 0.1.32(@langchain/core@0.2.10(langchain@0.2.7(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(openai@4.51.0(encoding@0.1.13)))(langchain@0.2.7(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(openai@4.51.0(encoding@0.1.13))
+      langsmith: 0.1.32(@langchain/core@0.2.10(langchain@0.2.7(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))(pdf-parse@1.1.1))(openai@4.51.0(encoding@0.1.13)))(langchain@0.2.7(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))(pdf-parse@1.1.1))(openai@4.51.0(encoding@0.1.13))
       ml-distance: 4.0.1
       openapi-types: 12.1.3
       p-retry: 4.6.2
@@ -2151,13 +2175,14 @@ snapshots:
       '@pinecone-database/pinecone': 2.2.2
       cheerio: 1.0.0-rc.12
       chromadb: 1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))
+      pdf-parse: 1.1.1
     transitivePeerDependencies:
       - encoding
       - openai
 
   langchainhub@0.0.11: {}
 
-  langsmith@0.1.32(@langchain/core@0.2.10(langchain@0.2.3(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(openai@4.51.0(encoding@0.1.13)))(langchain@0.2.3(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(openai@4.51.0(encoding@0.1.13)):
+  langsmith@0.1.32(@langchain/core@0.2.10(langchain@0.2.3(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))(pdf-parse@1.1.1))(openai@4.51.0(encoding@0.1.13)))(langchain@0.2.3(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))(pdf-parse@1.1.1))(openai@4.51.0(encoding@0.1.13)):
     dependencies:
       '@types/uuid': 9.0.8
       commander: 10.0.1
@@ -2165,11 +2190,11 @@ snapshots:
       p-retry: 4.6.2
       uuid: 9.0.1
     optionalDependencies:
-      '@langchain/core': 0.2.10(langchain@0.2.3(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(openai@4.51.0(encoding@0.1.13))
-      langchain: 0.2.3(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))
+      '@langchain/core': 0.2.10(langchain@0.2.3(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))(pdf-parse@1.1.1))(openai@4.51.0(encoding@0.1.13))
+      langchain: 0.2.3(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))(pdf-parse@1.1.1)
       openai: 4.51.0(encoding@0.1.13)
 
-  langsmith@0.1.32(@langchain/core@0.2.10(langchain@0.2.7(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(openai@4.51.0(encoding@0.1.13)))(langchain@0.2.7(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(openai@4.51.0(encoding@0.1.13)):
+  langsmith@0.1.32(@langchain/core@0.2.10(langchain@0.2.7(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))(pdf-parse@1.1.1))(openai@4.51.0(encoding@0.1.13)))(langchain@0.2.7(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))(pdf-parse@1.1.1))(openai@4.51.0(encoding@0.1.13)):
     dependencies:
       '@types/uuid': 9.0.8
       commander: 10.0.1
@@ -2177,8 +2202,8 @@ snapshots:
       p-retry: 4.6.2
       uuid: 9.0.1
     optionalDependencies:
-      '@langchain/core': 0.2.10(langchain@0.2.7(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(openai@4.51.0(encoding@0.1.13))
-      langchain: 0.2.7(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))
+      '@langchain/core': 0.2.10(langchain@0.2.7(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))(pdf-parse@1.1.1))(openai@4.51.0(encoding@0.1.13))
+      langchain: 0.2.7(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))(pdf-parse@1.1.1)
       openai: 4.51.0(encoding@0.1.13)
 
   long@4.0.0: {}
@@ -2237,6 +2262,8 @@ snapshots:
   node-addon-api@6.1.0: {}
 
   node-domexception@1.0.0: {}
+
+  node-ensure@0.0.0: {}
 
   node-fetch@2.7.0(encoding@0.1.13):
     dependencies:
@@ -2328,6 +2355,13 @@ snapshots:
   parse5@7.1.2:
     dependencies:
       entities: 4.5.0
+
+  pdf-parse@1.1.1:
+    dependencies:
+      debug: 3.2.7
+      node-ensure: 0.0.0
+    transitivePeerDependencies:
+      - supports-color
 
   picomatch@2.3.1: {}
 
