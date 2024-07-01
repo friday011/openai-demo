@@ -17,6 +17,9 @@ importers:
       '@langchain/openai':
         specifier: ^0.2.0
         version: 0.2.0(encoding@0.1.13)(langchain@0.2.7(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))(pdf-parse@1.1.1))
+      '@langchain/pinecone':
+        specifier: ^0.0.7
+        version: 0.0.7(langchain@0.2.7(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))(pdf-parse@1.1.1))(openai@4.51.0(encoding@0.1.13))
       '@pinecone-database/pinecone':
         specifier: ^2.2.2
         version: 2.2.2
@@ -455,6 +458,10 @@ packages:
 
   '@langchain/openai@0.2.0':
     resolution: {integrity: sha512-gZd+0IOxpiKuh1m6KTT5vtUoOO72GEYyoU4+c6qAUucOEqQS0Vvz3lMGyNWLjK4x4Xpd+r8GAF5mj/jvghwP1A==}
+    engines: {node: '>=18'}
+
+  '@langchain/pinecone@0.0.7':
+    resolution: {integrity: sha512-PQztQOjMyVSBz4AofpKMn619PyVVF6Gl0OJzubolZNUA4lbR3UR+kENEe81WD6RSbBy3K9brOfjDDYx1hmtqOw==}
     engines: {node: '>=18'}
 
   '@langchain/textsplitters@0.0.3':
@@ -1691,6 +1698,16 @@ snapshots:
     transitivePeerDependencies:
       - encoding
       - langchain
+
+  '@langchain/pinecone@0.0.7(langchain@0.2.7(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))(pdf-parse@1.1.1))(openai@4.51.0(encoding@0.1.13))':
+    dependencies:
+      '@langchain/core': 0.2.10(langchain@0.2.7(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))(pdf-parse@1.1.1))(openai@4.51.0(encoding@0.1.13))
+      '@pinecone-database/pinecone': 2.2.2
+      flat: 5.0.2
+      uuid: 9.0.1
+    transitivePeerDependencies:
+      - langchain
+      - openai
 
   '@langchain/textsplitters@0.0.3(langchain@0.2.3(@pinecone-database/pinecone@2.2.2)(cheerio@1.0.0-rc.12)(chromadb@1.8.1(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13)))(encoding@0.1.13)(openai@4.51.0(encoding@0.1.13))(pdf-parse@1.1.1))(openai@4.51.0(encoding@0.1.13))':
     dependencies:

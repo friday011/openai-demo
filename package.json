@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc --build",
     "start": "node ./dist/index.js",
-    "dev": "nodemon ./src/langchain-rag-pdf.ts"
+    "dev": "nodemon ./src/langchain-rag-web-history.ts"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +15,7 @@
     "@langchain/community": "^0.2.14",
     "@langchain/core": "^0.2.10",
     "@langchain/openai": "^0.2.0",
+    "@langchain/pinecone": "^0.0.7",
     "@pinecone-database/pinecone": "^2.2.2",
     "cheerio": "1.0.0-rc.12",
     "chromadb": "^1.8.1",
